@@ -1,16 +1,17 @@
 package TetrisPackage;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class GameWindow {
-    public static final int WIDTH = 460, HEIGHT = 629;
+    public static final int WIDTH = 460, HEIGHT = 638;
 
     private Board board;
     private IntroScreen introScreen;
     private JFrame window;
+    public static int tmrVlaue=0;
 
     public GameWindow() {
-
+        JLabel counterLabel = new JLabel("");
         window = new JFrame("Tetris");
         window.setSize(WIDTH, HEIGHT);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,17 +29,19 @@ public class GameWindow {
         window.setVisible(true);
     }
 
-    public void startTetris() {
+    public void startTetris(){
         window.remove(introScreen);
         window.addMouseMotionListener(board);
         window.addMouseListener(board);
         window.add(board);
         board.startGame();
         window.revalidate();
+        //make true for music to play
+        MusicPlayer.MusicState=false;
+        new MusicPlayer();
     }
 
     public static void main(String[] args) {
         new GameWindow();
     }
-
 }

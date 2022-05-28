@@ -1,7 +1,6 @@
 package TetrisPackage;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -33,21 +32,23 @@ public class IntroScreen extends JPanel implements KeyListener {
 		});
 		timer.start();
 		this.window = window;
-		
-		
-		
 	}
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		
+
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0, 0, GameWindow.WIDTH, GameWindow.HEIGHT);
 		g.drawImage(instructions, GameWindow.WIDTH/2 - instructions.getWidth()/2, 30 - instructions.getHeight()/2 + 150, null);
 		g.setColor(Color.WHITE);
-		g.drawString("Press space to play!", 150, GameWindow.HEIGHT / 2 + 100);
-		
-		
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 30));
+		g.drawString("Press space to play!", GameWindow.WIDTH/2-142, GameWindow.HEIGHT / 2 + 100);
+		g.drawString("____________________", GameWindow.WIDTH/2-175, GameWindow.HEIGHT / 2 + 110);
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+		g.drawString("Creators", GameWindow.WIDTH/3+30, GameWindow.HEIGHT / 2 + 160);
+		g.drawString("Etienne Tot & Denis Maslov", GameWindow.WIDTH/3-55, GameWindow.HEIGHT / 2 + 190);
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 11));
+		g.drawString("Version: 1.0", GameWindow.WIDTH/3+200, GameWindow.HEIGHT/2+260);
 	}	
 
     @Override
