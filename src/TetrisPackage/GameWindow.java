@@ -37,7 +37,7 @@ public class GameWindow {
         board.startGame();
         window.revalidate();
         //make true for music to play
-        MusicPlayer.MusicState=false;
+        MusicPlayer.MusicState=true;
         new MusicPlayer();
     }
 

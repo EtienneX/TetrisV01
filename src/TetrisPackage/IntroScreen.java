@@ -49,7 +49,7 @@ public class IntroScreen extends JPanel implements KeyListener {
 		g.drawString("Etienne Tot & Denis Maslov", GameWindow.WIDTH/3-55, GameWindow.HEIGHT / 2 + 190);
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 11));
 		g.drawString("Version: 1.0", GameWindow.WIDTH/3+200, GameWindow.HEIGHT/2+260);
-	}	
+	}
 
     @Override
     public void keyTyped(KeyEvent e) {
